@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Broadcast;
 
 
 Route::group(['prefix' => 'auth'], function () {
@@ -20,3 +21,5 @@ Route::group(['prefix' => 'users'], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::post('/', [UserController::class, 'store']);
 });
+
+// Ruta de autenticación para broadcasting
